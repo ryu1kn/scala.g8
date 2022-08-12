@@ -1,12 +1,13 @@
 
-lazy val root = (project in file(".")).
-  settings(
+lazy val root = project
+  .in(file("."))
+  .settings(
     name := "$name;format="normalize"$",
-    inThisBuild(List(
-      organization := "$package$",
-      scalaVersion := "2.13.8"
-    )),
+    organization := "$package$",
+
+    scalaVersion := "3.1.3",
+
     libraryDependencies ++= Seq(
-      $scalatest_version$ % Test
+      $munit_version$ % Test
     )
   )
